@@ -1,0 +1,15 @@
+import numpy as np
+st = input()
+a = st.split()
+m = int(a[0])
+n = int(a[1])
+arr = np.zeros((m,n))
+for i in range(m):
+    lst = input().split()
+    arr[i] = list(map(lambda x: int(x) if x.isdigit() else 0, lst))
+ma = np.max(arr, axis = 1)
+mi = np.min(arr, axis = 0)
+sum_cheo = sum([arr[i][j] for i in range(m) for j in range(n) if i==j])
+print(ma)
+print(mi)
+print(sum_cheo)
